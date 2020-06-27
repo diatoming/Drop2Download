@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F6A95B524A6EB7D00907D58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6A95B424A6EB7D00907D58 /* AppDelegate.swift */; };
+		1F6A95B724A6EB7D00907D58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6A95B624A6EB7D00907D58 /* ViewController.swift */; };
+		1F6A95B924A6EB8200907D58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F6A95B824A6EB8200907D58 /* Assets.xcassets */; };
+		1F6A95BC24A6EB8200907D58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6A95BA24A6EB8200907D58 /* Main.storyboard */; };
+		1F6A95C824A6EB8200907D58 /* Drop2DownloadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6A95C724A6EB8200907D58 /* Drop2DownloadTests.swift */; };
+		1F6A95D924A6F82100907D58 /* ShellProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6A95D824A6F82100907D58 /* ShellProcess.swift */; };
+		1F6A95DF24A8327500907D58 /* ShellProcessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6A95DE24A8327500907D58 /* ShellProcessManager.swift */; };
+		1F6A95EF24A842DA00907D58 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6A95EE24A842DA00907D58 /* StatusItemController.swift */; };
+		1F6A95F124A8900700907D58 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6A95F024A8900700907D58 /* Helper.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F6A95C424A6EB8200907D58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F6A95A924A6EB7D00907D58 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F6A95B024A6EB7D00907D58;
+			remoteInfo = Drop2Download;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F6A95B124A6EB7D00907D58 /* Drop2Download.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drop2Download.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F6A95B424A6EB7D00907D58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1F6A95B624A6EB7D00907D58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1F6A95B824A6EB8200907D58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F6A95BB24A6EB8200907D58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1F6A95BD24A6EB8200907D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F6A95BE24A6EB8200907D58 /* Drop2Download.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Drop2Download.entitlements; sourceTree = "<group>"; };
+		1F6A95C324A6EB8200907D58 /* Drop2DownloadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Drop2DownloadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F6A95C724A6EB8200907D58 /* Drop2DownloadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drop2DownloadTests.swift; sourceTree = "<group>"; };
+		1F6A95C924A6EB8200907D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F6A95D824A6F82100907D58 /* ShellProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellProcess.swift; sourceTree = "<group>"; };
+		1F6A95DA24A830E700907D58 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1F6A95DB24A830E700907D58 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		1F6A95DE24A8327500907D58 /* ShellProcessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellProcessManager.swift; sourceTree = "<group>"; };
+		1F6A95EE24A842DA00907D58 /* StatusItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
+		1F6A95F024A8900700907D58 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F6A95AE24A6EB7D00907D58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F6A95C024A6EB8200907D58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F6A95A824A6EB7D00907D58 = {
+			isa = PBXGroup;
+			children = (
+				1F6A95DB24A830E700907D58 /* LICENSE */,
+				1F6A95DA24A830E700907D58 /* README.md */,
+				1F6A95B324A6EB7D00907D58 /* Drop2Download */,
+				1F6A95C624A6EB8200907D58 /* Drop2DownloadTests */,
+				1F6A95B224A6EB7D00907D58 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1F6A95B224A6EB7D00907D58 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F6A95B124A6EB7D00907D58 /* Drop2Download.app */,
+				1F6A95C324A6EB8200907D58 /* Drop2DownloadTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F6A95B324A6EB7D00907D58 /* Drop2Download */ = {
+			isa = PBXGroup;
+			children = (
+				1F6A95B424A6EB7D00907D58 /* AppDelegate.swift */,
+				1F6A95F024A8900700907D58 /* Helper.swift */,
+				1F6A95DE24A8327500907D58 /* ShellProcessManager.swift */,
+				1F6A95D824A6F82100907D58 /* ShellProcess.swift */,
+				1F6A95B624A6EB7D00907D58 /* ViewController.swift */,
+				1F6A95EE24A842DA00907D58 /* StatusItemController.swift */,
+				1F6A95B824A6EB8200907D58 /* Assets.xcassets */,
+				1F6A95BA24A6EB8200907D58 /* Main.storyboard */,
+				1F6A95BD24A6EB8200907D58 /* Info.plist */,
+				1F6A95BE24A6EB8200907D58 /* Drop2Download.entitlements */,
+			);
+			path = Drop2Download;
+			sourceTree = "<group>";
+		};
+		1F6A95C624A6EB8200907D58 /* Drop2DownloadTests */ = {
+			isa = PBXGroup;
+			children = (
+				1F6A95C724A6EB8200907D58 /* Drop2DownloadTests.swift */,
+				1F6A95C924A6EB8200907D58 /* Info.plist */,
+			);
+			path = Drop2DownloadTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F6A95B024A6EB7D00907D58 /* Drop2Download */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F6A95CC24A6EB8200907D58 /* Build configuration list for PBXNativeTarget "Drop2Download" */;
+			buildPhases = (
+				1F6A95AD24A6EB7D00907D58 /* Sources */,
+				1F6A95AE24A6EB7D00907D58 /* Frameworks */,
+				1F6A95AF24A6EB7D00907D58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Drop2Download;
+			productName = Drop2Download;
+			productReference = 1F6A95B124A6EB7D00907D58 /* Drop2Download.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1F6A95C224A6EB8200907D58 /* Drop2DownloadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F6A95CF24A6EB8200907D58 /* Build configuration list for PBXNativeTarget "Drop2DownloadTests" */;
+			buildPhases = (
+				1F6A95BF24A6EB8200907D58 /* Sources */,
+				1F6A95C024A6EB8200907D58 /* Frameworks */,
+				1F6A95C124A6EB8200907D58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F6A95C524A6EB8200907D58 /* PBXTargetDependency */,
+			);
+			name = Drop2DownloadTests;
+			productName = Drop2DownloadTests;
+			productReference = 1F6A95C324A6EB8200907D58 /* Drop2DownloadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F6A95A924A6EB7D00907D58 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = diatoming;
+				TargetAttributes = {
+					1F6A95B024A6EB7D00907D58 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					1F6A95C224A6EB8200907D58 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 1F6A95B024A6EB7D00907D58;
+					};
+				};
+			};
+			buildConfigurationList = 1F6A95AC24A6EB7D00907D58 /* Build configuration list for PBXProject "Drop2Download" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1F6A95A824A6EB7D00907D58;
+			productRefGroup = 1F6A95B224A6EB7D00907D58 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F6A95B024A6EB7D00907D58 /* Drop2Download */,
+				1F6A95C224A6EB8200907D58 /* Drop2DownloadTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F6A95AF24A6EB7D00907D58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F6A95B924A6EB8200907D58 /* Assets.xcassets in Resources */,
+				1F6A95BC24A6EB8200907D58 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F6A95C124A6EB8200907D58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F6A95AD24A6EB7D00907D58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F6A95B724A6EB7D00907D58 /* ViewController.swift in Sources */,
+				1F6A95B524A6EB7D00907D58 /* AppDelegate.swift in Sources */,
+				1F6A95EF24A842DA00907D58 /* StatusItemController.swift in Sources */,
+				1F6A95DF24A8327500907D58 /* ShellProcessManager.swift in Sources */,
+				1F6A95D924A6F82100907D58 /* ShellProcess.swift in Sources */,
+				1F6A95F124A8900700907D58 /* Helper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F6A95BF24A6EB8200907D58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F6A95C824A6EB8200907D58 /* Drop2DownloadTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F6A95C524A6EB8200907D58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F6A95B024A6EB7D00907D58 /* Drop2Download */;
+			targetProxy = 1F6A95C424A6EB8200907D58 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1F6A95BA24A6EB8200907D58 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F6A95BB24A6EB8200907D58 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1F6A95CA24A6EB8200907D58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1F6A95CB24A6EB8200907D58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		1F6A95CD24A6EB8200907D58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Drop2Download/Drop2Download.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Drop2Download/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.diatoming.Drop2Download;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1F6A95CE24A6EB8200907D58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Drop2Download/Drop2Download.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Drop2Download/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.diatoming.Drop2Download;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		1F6A95D024A6EB8200907D58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Drop2DownloadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.diatoming.Drop2DownloadTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drop2Download.app/Contents/MacOS/Drop2Download";
+			};
+			name = Debug;
+		};
+		1F6A95D124A6EB8200907D58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Drop2DownloadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.diatoming.Drop2DownloadTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drop2Download.app/Contents/MacOS/Drop2Download";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F6A95AC24A6EB7D00907D58 /* Build configuration list for PBXProject "Drop2Download" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F6A95CA24A6EB8200907D58 /* Debug */,
+				1F6A95CB24A6EB8200907D58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F6A95CC24A6EB8200907D58 /* Build configuration list for PBXNativeTarget "Drop2Download" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F6A95CD24A6EB8200907D58 /* Debug */,
+				1F6A95CE24A6EB8200907D58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F6A95CF24A6EB8200907D58 /* Build configuration list for PBXNativeTarget "Drop2DownloadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F6A95D024A6EB8200907D58 /* Debug */,
+				1F6A95D124A6EB8200907D58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1F6A95A924A6EB7D00907D58 /* Project object */;
+}

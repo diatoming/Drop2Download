@@ -1,7 +1,7 @@
 # Drop2Download
 Simple macOS app of youtube-dl GUI sitting in menu bar
 
-## Usage
+### Usage
 Drag and drop a URL to the app icon in menu bar.
 
 ### youtube-dl configuration

@@ -16,71 +16,110 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
+        // Register event handler
+        let em = NSAppleEventManager.shared()
+        em.setEventHandler(self, andSelector: #selector(AppDelegate.handleUrl(_:with:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
+
         self.refreshMenubarMenu()
         
-        UNUserNotificationCenter.current().requestPermission { _ in
-        }
+        UNUserNotificationCenter.current().requestPermission { _ in }
         
         statusItemController.onURLDropped = {
-//            [weak self]
-            url in
+            [weak self] url in
             print(url)
-            
-            if url.absoluteString.contains("youtube.com") {
-             
-                guard let youtubedlBin = "which youtube-dl".runAsShellCommand()?.trimmingCharacters(in: .whitespacesAndNewlines), !youtubedlBin.isEmpty else { return }
-                print(youtubedlBin)
-                
-                let task = ShellProcess()
-                task.url = url.absoluteString
-                task.outputDataAvailableHandler = { data in
-                    
-                    let str = data.decodedString().lowercased()
-                    let token = "[download] Destination:".lowercased()
-                    print(str)
-                    if str.contains(token) {
-                        if let r = str.range(of: token) {
-                            if let path = str[r.upperBound...].components(separatedBy: .newlines).first {
-                                print(path)
-                                let url = URL(fileURLWithPath: path.trimmingCharacters(in: .whitespacesAndNewlines))
-                                task.title = url.lastPathComponent
-                            }
-                        }
-                    }
-                    
-                    // TODO: parse downloading progress
-                }
-                task.completionHandler = {
-                    // delay a bit in case process terminated with no buffer
-                    DispatchQueue.global().asyncAfter(deadline: .now() + 0.1) {
-                        if let task = ShellProcessManager.shared.find(with: task.uuid) {
-                            print(task.title as Any)
-                            let notiTitle = "✅ Download Completed"
-//                            let notiSubtitle = "Downloaded to:"
-                            let body = task.title ?? task.url ?? task.uuid.uuidString
-                            UNUserNotificationCenter.current().postNotification(title: notiTitle, subtitle: "", body: body)
-                        }
-                        
-                        ShellProcessManager.shared.remove(task)
-                    }
-                }
-                ShellProcessManager.shared.add(task)
-                // TODO: support custom config
-                
-                // use default config if exist
-                let downloadUrl = "'\(url.absoluteString)'"
-                let home = FileManager.default.homeDirectoryForCurrentUser.path
-                if FileManager.default.fileExists(atPath: "\(home)/.config/youtube-dl/config") {
-                    task.run(command: youtubedlBin, arguments: [downloadUrl])
-                } else {
-                    task.run(command: youtubedlBin, arguments: ["-f", "22/bestvideo[height=720][ext=mp4]+bestaudio[ext=m4a]/best", "-o '~/Downloads/%(title)s.%(ext)s'", "--no-part -R infinite", downloadUrl])
-                }
-            }
+            self?.download(from: url)
         }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+    }
+    
+    // https://stackoverflow.com/questions/49510/how-do-you-set-your-cocoa-application-as-the-default-web-browser
+    @objc private func handleUrl(_ event: NSAppleEventDescriptor, with replyEvent: NSAppleEventDescriptor) {
+        if let urlStr = event.paramDescriptor(forKeyword: keyDirectObject)?.stringValue {
+            Swift.print(urlStr)
+            if let url = URL(string: urlStr) {
+                
+                if let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
+                    let items = components.queryItems {
+                    let urls = items.compactMap { item -> String? in
+                        switch item.name {
+                        case "url":
+                            return item.value
+                        default: return nil
+                        }
+                    }
+                    for str in urls {
+                        if let url = URL(string: str) {
+                            self.download(from: url)
+                        }
+                    }
+                }
+            }
+                 
+//            self.addURIToTransmission(magnetURL: urlStr, ssnID: self.transmissionSessionID)
+
+        } else {
+            print("Error", "Failed to open with unrecognized URL.")
+        }
+    }
+    
+    private func download(from url: URL) {
+        
+        if url.absoluteString.contains("youtube.com") {
+            self.downloadYoutube(url: url)
+        }
+    }
+    
+    private func downloadYoutube(url: URL) {
+        guard let youtubedlBin = "which youtube-dl".runAsShellCommand()?.trimmingCharacters(in: .whitespacesAndNewlines), !youtubedlBin.isEmpty else { return }
+        print(youtubedlBin)
+        
+        let task = ShellProcess()
+        task.url = url.absoluteString
+        task.outputDataAvailableHandler = { data in
+            
+            let str = data.decodedString().lowercased()
+            let token = "[download] Destination:".lowercased()
+            print(str)
+            if str.contains(token) {
+                if let r = str.range(of: token) {
+                    if let path = str[r.upperBound...].components(separatedBy: .newlines).first {
+                        print(path)
+                        let url = URL(fileURLWithPath: path.trimmingCharacters(in: .whitespacesAndNewlines))
+                        task.title = url.lastPathComponent
+                    }
+                }
+            }
+            
+            // TODO: parse downloading progress
+        }
+        task.completionHandler = {
+            // delay a bit in case process terminated with no buffer
+            DispatchQueue.global().asyncAfter(deadline: .now() + 0.1) {
+                if let task = ShellProcessManager.shared.find(with: task.uuid) {
+                    print(task.title as Any)
+                    let notiTitle = "✅ Download Completed"
+                    //                            let notiSubtitle = "Downloaded to:"
+                    let body = task.title ?? task.url ?? task.uuid.uuidString
+                    UNUserNotificationCenter.current().postNotification(title: notiTitle, subtitle: "", body: body)
+                }
+                
+                ShellProcessManager.shared.remove(task)
+            }
+        }
+        ShellProcessManager.shared.add(task)
+        // TODO: support custom config
+        
+        // use default config if exist
+        let downloadUrl = "'\(url.absoluteString)'"
+        let home = FileManager.default.homeDirectoryForCurrentUser.path
+        if FileManager.default.fileExists(atPath: "\(home)/.config/youtube-dl/config") {
+            task.run(command: youtubedlBin, arguments: [downloadUrl])
+        } else {
+            task.run(command: youtubedlBin, arguments: ["-f", "22/bestvideo[height=720][ext=mp4]+bestaudio[ext=m4a]/best", "-o '~/Downloads/%(title)s.%(ext)s'", "--no-part -R infinite", downloadUrl])
+        }
     }
 }
 

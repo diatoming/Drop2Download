@@ -20,6 +20,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let em = NSAppleEventManager.shared()
         em.setEventHandler(self, andSelector: #selector(AppDelegate.handleUrl(_:with:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
 
+        setDefault()
+        
         self.refreshMenubarMenu()
         
         UNUserNotificationCenter.current().requestPermission { _ in }
@@ -36,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     // https://stackoverflow.com/questions/49510/how-do-you-set-your-cocoa-application-as-the-default-web-browser
-    @objc private func handleUrl(_ event: NSAppleEventDescriptor, with replyEvent: NSAppleEventDescriptor) {
+    @objc func handleUrl(_ event: NSAppleEventDescriptor, with replyEvent: NSAppleEventDescriptor) {
         if let urlStr = event.paramDescriptor(forKeyword: keyDirectObject)?.stringValue {
             Swift.print(urlStr)
             if let url = URL(string: urlStr) {
@@ -62,6 +64,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         } else {
             print("Error", "Failed to open with unrecognized URL.")
+        }
+    }
+    
+    func setDefault() {
+        if let bundleIdentifier = Bundle.main.bundleIdentifier {
+            LSSetDefaultHandlerForURLScheme("d2d" as CFString, bundleIdentifier as CFString)
+        } else {
+            assertionFailure("BundleIdenrifier not found!")
         }
     }
     

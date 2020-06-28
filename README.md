@@ -1,5 +1,5 @@
 # Drop2Download
-Simple macOS app of youtube-dl GUI sitting in menu bar
+Simple macOS app for youtube-dl sitting in menu bar
 
 ### Usage
 Drag and drop a URL to the app icon in menu bar.
@@ -10,7 +10,8 @@ will download 720p by default.
 
 ### Requirements
 macOS 10.15+
-youtube-dl
+
+[youtube-dl](https://github.com/ytdl-org/youtube-dl)
 
 ### Credits
 [youtube-dl](https://github.com/ytdl-org/youtube-dl)

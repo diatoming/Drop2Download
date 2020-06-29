@@ -2,7 +2,7 @@
 Simple macOS app for youtube-dl sitting in menu bar
 
 ### Usage
-Drag and drop a URL to the app icon in menu bar.
+Drag and drop a link to the app icon in menu bar.
 
 ### Integrate with DintFeed
 Drop2Download's URL scheme is *d2d*, you can use this scheme in DintFeed to download

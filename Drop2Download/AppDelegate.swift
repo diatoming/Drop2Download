@@ -79,6 +79,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if url.absoluteString.contains("youtube.com") {
             self.downloadYoutube(url: url)
+        } else {
+            // allow youtube-dl download other links if possible
+            self.downloadYoutube(url: url)
         }
     }
     

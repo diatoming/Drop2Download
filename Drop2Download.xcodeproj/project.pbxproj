@@ -45,6 +45,7 @@
 		1F6A95DE24A8327500907D58 /* ShellProcessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellProcessManager.swift; sourceTree = "<group>"; };
 		1F6A95EE24A842DA00907D58 /* StatusItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
 		1F6A95F024A8900700907D58 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		1F6A95F324A9BA3D00907D58 /* drop2download.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = drop2download.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +71,7 @@
 			children = (
 				1F6A95DB24A830E700907D58 /* LICENSE */,
 				1F6A95DA24A830E700907D58 /* README.md */,
+				1F6A95F324A9BA3D00907D58 /* drop2download.gif */,
 				1F6A95B324A6EB7D00907D58 /* Drop2Download */,
 				1F6A95C624A6EB8200907D58 /* Drop2DownloadTests */,
 				1F6A95B224A6EB7D00907D58 /* Products */,

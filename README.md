@@ -1,6 +1,8 @@
 # Drop2Download
 Simple macOS app for youtube-dl sitting in menu bar
 
+![Drop2Download](https://github.com/diatoming/Drop2Download/blob/master/drop2download.gif)
+
 ### Usage
 Drag and drop a link to the app icon in menu bar.
 

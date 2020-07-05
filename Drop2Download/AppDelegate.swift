@@ -83,6 +83,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             // allow youtube-dl download other links if possible
             self.downloadYoutube(url: url)
         }
+        
+        // switch back to safari
+        let safari = NSWorkspace.shared.runningApplications.filter {
+            $0.bundleIdentifier == "com.apple.Safari"
+            }.first
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.3, execute: {
+            safari?.activate(options: .activateIgnoringOtherApps)
+        })
+
     }
     
     private func downloadYoutube(url: URL) {

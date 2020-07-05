@@ -29,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItemController.onURLDropped = {
             [weak self] url in
             print(url)
-            self?.download(from: url)
+            self?.download(from: url, backToSafari: true)
         }
     }
 
@@ -75,7 +75,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    private func download(from url: URL) {
+    private func download(from url: URL, backToSafari: Bool = false) {
         
         if url.absoluteString.contains("youtube.com") {
             self.downloadYoutube(url: url)
@@ -84,14 +84,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.downloadYoutube(url: url)
         }
         
-        // switch back to safari
-        let safari = NSWorkspace.shared.runningApplications.filter {
-            $0.bundleIdentifier == "com.apple.Safari"
+        if backToSafari {
+            // switch back to safari
+            let safari = NSWorkspace.shared.runningApplications.filter {
+                $0.bundleIdentifier == "com.apple.Safari"
             }.first
-        DispatchQueue.global().asyncAfter(deadline: .now() + 0.3, execute: {
-            safari?.activate(options: .activateIgnoringOtherApps)
-        })
-
+            DispatchQueue.global().asyncAfter(deadline: .now() + 0.3, execute: {
+                safari?.activate(options: .activateIgnoringOtherApps)
+            })
+        }
     }
     
     private func downloadYoutube(url: URL) {

@@ -42,7 +42,7 @@ public class ShellProcess {
         
         self.outHandle = outputPipe.fileHandleForReading
         
-        process.waitUntilExit()
+//        process.waitUntilExit()
         process.terminationHandler = { task in
             self.completionHandler?()
             print("\(task) - EOF")

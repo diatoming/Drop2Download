@@ -118,13 +118,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             // TODO: parse downloading progress
         }
-        task.completionHandler = {
+        task.completionHandler = { err in
             // delay a bit in case process terminated with no buffer
             DispatchQueue.global().asyncAfter(deadline: .now() + 0.1) {
                 if let task = ShellProcessManager.shared.find(with: task.uuid) {
                     print(task.title as Any)
-                    let notiTitle = "✅ Download Completed"
-                    //                            let notiSubtitle = "Downloaded to:"
+                    var notiTitle = "✅ Download Completed"
+                    switch err {
+                        case .some(.taskFailed(let str)):
+                            notiTitle = "❌ \(str)"
+                        default: break
+                    }
+                    
                     let body = task.title ?? task.url ?? task.uuid.uuidString
                     UNUserNotificationCenter.current().postNotification(title: notiTitle, subtitle: "", body: body)
                 }

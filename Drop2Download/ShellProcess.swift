@@ -8,6 +8,10 @@
 
 import Foundation
 
+public enum ProcessError: Error {
+    case taskFailed(String)
+}
+
 /// Process wrapper to run shell command from bash/sh
 public class ShellProcess {
     
@@ -19,7 +23,7 @@ public class ShellProcess {
     public var url: String?
     public var title: String?
     
-    public var completionHandler: (() -> Void)?
+    public var completionHandler: ((ProcessError?) -> Void)?
     public var outputDataAvailableHandler: ((Data) -> Void)?
     
     public func run(command: String, arguments: [String] = []) {
@@ -44,7 +48,7 @@ public class ShellProcess {
         
 //        process.waitUntilExit()
         process.terminationHandler = { task in
-            self.completionHandler?()
+            self.completionHandler?(task.terminationStatus == 0 ? nil : .taskFailed("Download Failed!"))
             print("\(task) - EOF")
         }
         

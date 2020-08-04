@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "1160"
+   version = "1.7">
+   <BuildAction
+      parallelizeBuildables = "YES"
+      buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1F6A95B024A6EB7D00907D58"
+               BuildableName = "Drop2Download.app"
+               BlueprintName = "Drop2Download"
+               ReferencedContainer = "container:Drop2Download.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1F6A95C224A6EB8200907D58"
+               BuildableName = "Drop2DownloadTests.xctest"
+               BlueprintName = "Drop2DownloadTests"
+               ReferencedContainer = "container:Drop2Download.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
+   </TestAction>
+   <LaunchAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      launchStyle = "0"
+      useCustomWorkingDirectory = "NO"
+      ignoresPersistentStateOnLaunch = "NO"
+      debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
+      allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1F6A95B024A6EB7D00907D58"
+            BuildableName = "Drop2Download.app"
+            BlueprintName = "Drop2Download"
+            ReferencedContainer = "container:Drop2Download.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </LaunchAction>
+   <ProfileAction
+      buildConfiguration = "Release"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1F6A95B024A6EB7D00907D58"
+            BuildableName = "Drop2Download.app"
+            BlueprintName = "Drop2Download"
+            ReferencedContainer = "container:Drop2Download.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Debug">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Release"
+      revealArchiveInOrganizer = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "BUILD_NUM=$(/usr/libexec/PlistBuddy -c &quot;Print CFBundleVersion&quot; &quot;${PROJECT_DIR}/${INFOPLIST_FILE}&quot;)&#10;VERSION_NUM=$(/usr/libexec/PlistBuddy -c &quot;Print CFBundleShortVersionString&quot; &quot;${PROJECT_DIR}/${INFOPLIST_FILE}&quot;)&#10;&#10;BUILD_NUM=$(($BUILD_NUM + 1))&#10;&#10;/usr/libexec/PlistBuddy -c &quot;Set :CFBundleVersion $BUILD_NUM&quot; &quot;${PROJECT_DIR}/${INFOPLIST_FILE}&quot;&#10;&#10;cd &quot;${SRCROOT}&quot;;/usr/bin/git add &quot;${PROJECT_DIR}/${INFOPLIST_FILE}&quot;&#10;cd &quot;${SRCROOT}&quot;;/usr/bin/git commit -m &quot;Post archive bumped build number to ${BUILD_NUM} for version ${VERSION_NUM}&quot;&#10;cd &quot;${SRCROOT}&quot;;/usr/bin/git tag -f -a &quot;v${VERSION_NUM}b${BUILD_NUM}&quot; -m &quot;Version ${VERSION_NUM}, Buidl ${BUILD_NUM}&quot;&#10;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "1F6A95B024A6EB7D00907D58"
+                     BuildableName = "Drop2Download.app"
+                     BlueprintName = "Drop2Download"
+                     ReferencedContainer = "container:Drop2Download.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
+   </ArchiveAction>
+</Scheme>

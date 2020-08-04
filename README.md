@@ -11,7 +11,7 @@ Drop2Download's URL scheme is *d2d*, you can use this scheme in DintFeed to down
 from youtube feeds.
 
 Please check this article for more details:
-[Integrate DintFeed with Drop2Download](https://dintapps.com/articles/Download%20youtube%20videos%20with%20Drop2Download)
+[Integrate DintFeed with Drop2Download](https://dintapps.com/articles/download-youtube-videos-with-drop2download/)
 
 ### youtube-dl configuration
 If there is a default youtube-dl config file located at *~/.config/youtube-dl/config*, Drop2Download will use the config; otherwise
